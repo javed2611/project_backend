@@ -1,0 +1,47 @@
+package com.jk.service;
+
+import org.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.jk.dto.OrderResponse;
+import com.jk.dto.PurchaseDTO;
+import com.jk.entity.Customer;
+import com.jk.repositry.CustomerRepositry;
+import com.razorpay.RazorpayClient;
+import com.razorpay.RazorpayException;
+
+@Service
+public class OrderService {
+	
+	@Autowired
+	private CustomerRepositry customerRepositry;
+	
+	private RazorpayClient client;
+
+	@Value("${razorpay.key.id}")
+	private String keyId;
+
+	@Value("${razorpay.key.secret}")
+	private String keySecret;
+	
+	public OrderResponse createOrder(PurchaseDTO purchaseDTO) throws RazorpayException {
+		// Order Creation for razorpay
+		JSONObject orderRequest = new JSONObject();
+		orderRequest.put("amount", purchaseDTO.getOrder().getTotalPrice() *100);
+		orderRequest.put("currency", "INR");
+		orderRequest.put("receipt", purchaseDTO.getCustomer().getEmail());
+		
+		// initiate the razorpay client
+		this.client = new RazorpayClient(keyId, keySecret);
+		com.razorpay.Order razorPayOrder = client.Orders.create(orderRequest);
+		Customer customer = customerRepositry.findByEmail(purchaseDTO.getCustomer().getEmail());
+		if (customer == null) {
+			ObjectMapper obj = new ObjectMapper();
+			customer = obj.convertValue(purchaseDTO.getCustomer(), Customer.class);
+		}
+	}
+
+}

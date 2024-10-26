@@ -1,0 +1,29 @@
+package com.jk.dto;
+
+import java.util.List;
+
+import com.jk.entity.Address;
+import com.jk.entity.Customer;
+import com.jk.entity.OrderItem;
+
+import jakarta.persistence.ElementCollection;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+
+public class OrderDTO {
+
+	private String razorPayOrderId;
+	private String orderStatus;
+	private double totalPrice;
+	private int quantity;
+	private String razorPayPaymentId;
+	@ManyToOne
+	@JoinColumn(name = "customer_id")
+	private Customer customer;
+	@ManyToOne
+	@JoinColumn(name = "address_id")
+	private Address address;
+	@ElementCollection
+	private List<OrderItem> orderItems;
+
+}

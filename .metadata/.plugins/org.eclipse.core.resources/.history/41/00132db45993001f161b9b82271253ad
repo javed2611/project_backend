@@ -1,0 +1,9 @@
+package com.jk.repositry;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.jk.entity.Order;
+
+public interface OrderRepository extends JpaRepository<Order, Long> {
+	public Order findByRazorPayOrderId(String razorPayOrderId);
+}
