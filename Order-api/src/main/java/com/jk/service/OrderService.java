@@ -54,7 +54,7 @@ public class OrderService {
 	public OrderResponse createOrder(PurchaseDTO purchaseDTO) throws RazorpayException {
 		// Order Creation for razorpay
 		JSONObject orderRequest = new JSONObject();
-		orderRequest.put("amount", purchaseDTO.getOrder().getTotalPrice() * 100);
+		orderRequest.put("amount", (int)purchaseDTO.getOrder().getTotalPrice() * 100);
 		orderRequest.put("currency", "INR");
 		orderRequest.put("receipt", purchaseDTO.getCustomer().getEmail());
 
@@ -63,9 +63,15 @@ public class OrderService {
 		com.razorpay.Order razorPayOrder = client.Orders.create(orderRequest);
 		Customer customer = customerRepositry.findByEmail(purchaseDTO.getCustomer().getEmail());
 		if (customer == null) {
-			ObjectMapper obj = new ObjectMapper();
-			customer = obj.convertValue(purchaseDTO.getCustomer(), Customer.class);
-			customerRepositry.save(customer);
+//			ObjectMapper obj = new ObjectMapper();
+//			customer = obj.convertValue(purchaseDTO.getCustomer(), Customer.class);
+//			BeanUtils.copyProperties(purchaseDTO.getCustomer(), customer);
+//			customerRepositry.save(customer);
+			 customer = new Customer();
+	            customer.setName(purchaseDTO.getCustomer().getName());
+	            customer.setEmail(purchaseDTO.getCustomer().getEmail());
+	            customer.setPhno(purchaseDTO.getCustomer().getPhno()); // Assuming there's a phone number field
+	            customerRepositry.save(customer);
 		}
 		Address address = new Address();
 		address.setCustomer(customer);

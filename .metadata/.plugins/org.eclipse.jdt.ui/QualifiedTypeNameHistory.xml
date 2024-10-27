@@ -41,7 +41,6 @@
     <fullyQualifiedTypeName name="com.jk.repositry.OrderItemRepositry"/>
     <fullyQualifiedTypeName name="com.jk.dto.OrderItemDTO"/>
     <fullyQualifiedTypeName name="com.jk.entity.OrderItem"/>
-    <fullyQualifiedTypeName name="org.springframework.beans.BeanUtils"/>
     <fullyQualifiedTypeName name="java.time.LocalDate"/>
     <fullyQualifiedTypeName name="com.jk.dto.PaymentCallbackDTO"/>
     <fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
@@ -60,4 +59,5 @@
     <fullyQualifiedTypeName name="com.jk.entity.Order"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="jakarta.persistence.Table"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.BeanUtils"/>
 </qualifiedTypeNameHistroy>
