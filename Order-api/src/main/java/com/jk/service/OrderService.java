@@ -54,7 +54,7 @@ public class OrderService {
 	public OrderResponse createOrder(PurchaseDTO purchaseDTO) throws RazorpayException {
 		// Order Creation for razorpay
 		JSONObject orderRequest = new JSONObject();
-		orderRequest.put("amount", (int)purchaseDTO.getOrder().getTotalPrice() * 100);
+		orderRequest.put("amount", (int)(purchaseDTO.getOrder().getTotalPrice() * 100));
 		orderRequest.put("currency", "INR");
 		orderRequest.put("receipt", purchaseDTO.getCustomer().getEmail());
 

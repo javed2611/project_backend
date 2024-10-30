@@ -9,14 +9,14 @@ import com.razorpay.RazorpayException;
 
 @Configuration
 public class RazorPayConfig {
-	 @Value("${razorpay.key.id}")
-	    private String keyId;
+	@Value("${razorpay.key.id}")
+	private String keyId;
 
-	    @Value("${razorpay.key.secret}")
-	    private String keySecret;
+	@Value("${razorpay.key.secret}")
+	private String keySecret;
 
-	    @Bean
-	    public RazorpayClient razorpayClient() throws RazorpayException {
-	        return new RazorpayClient(keyId, keySecret);
-	    }
+	@Bean
+	public RazorpayClient razorpayClient() throws RazorpayException {
+		return new RazorpayClient(keyId, keySecret);
+	}
 }
