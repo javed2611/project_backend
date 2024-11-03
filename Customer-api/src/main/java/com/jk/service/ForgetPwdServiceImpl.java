@@ -23,7 +23,7 @@ public class ForgetPwdServiceImpl implements ForgetPwdService {
 
 	@Override
 	public boolean sendMail(String email) throws MessagingException, IOException {
-		String url = "http://localhost:4200/resetpwd/" + email;
+		String url = "http://localhost:4200/reset-pwd/" + email;
 		Customer customer = customerRepo.findByEmail(email);
 		String name = customer.getName();
 		return emailUtils.sendResetPasswordMail(email, name, url);

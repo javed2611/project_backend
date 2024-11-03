@@ -1,7 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
-    <typeInfo handle="=Customer-api/C:\/Program Files\/Java\/jdk-20\/lib\/jrt-fs.jar`java.desktop=/javadoc_location=/https:\/\/docs.oracle.com\/en\/java\/javase\/20\/docs\/api\/=/=/maven.pomderived=/true=/&lt;javax.imageio.spi(RegisterableService.class[RegisterableService" modifiers="1537" timestamp="1721232860812"/>
-    <typeInfo handle="=Customer-api/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.jk.service{RegisterService.java[RegisterService" modifiers="513" timestamp="1730134768368"/>
-    <typeInfo handle="=Customer-api/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.jk.service{LoginService.java[LoginService" modifiers="513" timestamp="1730303552132"/>
-    <typeInfo handle="=Customer-api/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.jk.service{ResetPwdService.java[ResetPwdService" modifiers="513" timestamp="1730307071361"/>
+    <typeInfo handle="=Admin-api/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.jk.service{ReportService.java[ReportService" modifiers="513" timestamp="1730538959247"/>
 </typeInfoHistroy>

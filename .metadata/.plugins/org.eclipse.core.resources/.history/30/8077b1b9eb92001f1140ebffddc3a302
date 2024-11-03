@@ -1,7 +1,0 @@
-package com.jk.dto;
-
-public class OrderDTO {
-
-	private int quantity;
-	
-}

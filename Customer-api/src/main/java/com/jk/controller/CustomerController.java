@@ -2,6 +2,7 @@ package com.jk.controller;
 
 import java.io.IOException;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,6 +20,7 @@ import com.jk.service.ResetPwdService;
 import jakarta.mail.MessagingException;
 
 @RestController
+@CrossOrigin("http://localhost:4200")
 @RequestMapping("/api/customer")
 public class CustomerController {
 

@@ -1,5 +1,6 @@
 package com.jk.dto;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import com.jk.entity.Address;
@@ -16,6 +17,7 @@ public class OrderDTO {
 	private String orderStatus;
 	private double totalPrice;
 	private int quantity;
+	private LocalDate deilveryDate;
 	private String razorPayPaymentId;
 	@ManyToOne
 	@JoinColumn(name = "customer_id")
@@ -88,6 +90,14 @@ public class OrderDTO {
 
 	public void setOrderItems(List<OrderItem> orderItems) {
 		this.orderItems = orderItems;
+	}
+
+	public LocalDate getDeilveryDate() {
+		return deilveryDate;
+	}
+
+	public void setDeilveryDate(LocalDate deilveryDate) {
+		this.deilveryDate = deilveryDate;
 	}
 
 }
