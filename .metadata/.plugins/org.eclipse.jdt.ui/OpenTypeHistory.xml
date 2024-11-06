@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
     <typeInfo handle="=Admin-api/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.jk.service{ReportService.java[ReportService" modifiers="513" timestamp="1730538959247"/>
+    <typeInfo handle="=Notification-api/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.jk.service{OrderService.java[OrderService" modifiers="513" timestamp="1730902402654"/>
+    <typeInfo handle="=Notification-api/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.jk.service{EmailService.java[EmailService" modifiers="513" timestamp="1730903396056"/>
 </typeInfoHistroy>

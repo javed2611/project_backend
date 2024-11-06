@@ -20,8 +20,8 @@ public class EmailTemplateLoader {
 		return new String(Files.readAllBytes(Paths.get(resource.getURI())));
 	}
 
-	public String replacePlaceHolders(String template, String name, String resetLink) {
-		return template.replace("{{name}}", name).replace("{{resetLink}}", resetLink);
+	public String replacePlaceHolders(String template, String name, String url) {
+		return template.replace("{{name}}", name).replace("{{resetLink}}", url);
 	}
 
 }
